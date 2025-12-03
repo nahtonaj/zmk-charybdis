@@ -127,10 +127,10 @@
         /* Base: normal movement with scaling and automouse temp layer */
         input-processors = <&zip_xy_scaler 1 2 &zip_temp_layer 5 1000>;
 
-        /* Scroll mode on layer 3 - natural scrolling (inverted Y) */
+        /* Scroll mode on layer 3 - natural scrolling (inverted Y, slowed down) */
         scroll {
             layers = <3>;
-            input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT &zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_scaler 1 8 &zip_xy_transform INPUT_TRANSFORM_Y_INVERT &zip_xy_to_scroll_mapper>;
         };
 
         /* Snipe mode on layer 4 - slower/more precise */
