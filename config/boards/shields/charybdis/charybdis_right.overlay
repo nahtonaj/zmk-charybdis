@@ -127,10 +127,10 @@
         /* Base: normal movement with scaling and automouse temp layer */
         input-processors = <&zip_xy_scaler 1 2 &zip_temp_layer 5 250>;
 
-        /* Scroll mode on layer 3 */
+        /* Scroll mode on layer 3 - scale XY before mapping to scroll */
         scroll {
             layers = <3>;
-            input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 8>;
+            input-processors = <&zip_xy_scaler 1 16 &zip_xy_to_scroll_mapper>;
         };
 
         /* Snipe mode on layer 4 - slower/more precise */
