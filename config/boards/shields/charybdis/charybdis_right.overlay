@@ -114,68 +114,28 @@
 
 
 
+/* Include ZMK's built-in input processors */
+#include <input/processors.dtsi>
+
 / {
-    /* Input behaviors for trackball */
-    behaviors {
-        ib_wheel_scaler: ib_wheel_scaler {
-            compatible = "zmk,input-behavior-scaler";
-            #binding-cells = <2>;
-            evt-type = <INPUT_EV_REL>;
-            input-code = <INPUT_REL_WHEEL>;
+    /* Trackball input listener with layer-specific overrides */
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+        /* Base: normal movement with scaling and automouse temp layer */
+        input-processors = <&zip_xy_scaler 1 2 &zip_temp_layer 5 1000>;
+
+        /* Scroll mode on layer 3 */
+        scroll {
+            layers = <3>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
         };
 
-        ib_tog_layer: ib_tog_layer {
-            compatible = "zmk,input-behavior-tog-layer";
-            #binding-cells = <1>;
-            time-to-live-ms = <1000>;
+        /* Snipe mode on layer 4 - slower/more precise */
+        snipe {
+            layers = <4>;
+            input-processors = <&zip_xy_scaler 1 3>;
         };
-    };
-
-    /* Trackball input listeners */
-    trackball_move_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
-        layers = <0 1 2>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <2>;
-        bindings = <&ib_tog_layer 5>;
-    };
-
-    trackball_scroll_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
-        layers = <3>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_MISC>;
-        y-input-code = <INPUT_REL_WHEEL>;
-        y-invert;
-        bindings = <&ib_wheel_scaler 1 14>;
-    };
-
-    trackball_snipe_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
-        layers = <4>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <3>;
-    };
-
-    /* Automouse layer listener - activates layer 5 when trackball moves */
-    trackball_automouse_listener {
-        compatible = "zmk,input-behavior-listener";
-        device = <&trackball>;
-        layers = <5>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-        scale-multiplier = <1>;
-        scale-divisor = <2>;
     };
 };
 
