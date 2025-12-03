@@ -130,7 +130,7 @@
         /* Scroll mode on layer 3 - chain scalers for 1/128 effective scaling */
         scroll {
             layers = <3>;
-            input-processors = <&zip_xy_scaler 1 16 &zip_xy_to_scroll_mapper &zip_scroll_scaler 1 8>;
+            input-processors = <&zip_xy_scaler 1 8 &zip_xy_to_scroll_mapper &zip_scroll_scaler 1 16>;
         };
 
         /* Snipe mode on layer 4 - slower/more precise */
