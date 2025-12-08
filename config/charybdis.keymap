@@ -135,7 +135,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
                         &trans  &trans  &trans    &mkp LCLK  &mkp RCLK
                                 &trans  &trans    &trans
             >;
@@ -147,8 +147,8 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans     &trans
                                 &trans  &trans    &trans
             >;
