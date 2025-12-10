@@ -83,6 +83,28 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        left-click {
+            bindings = <&mkp LCLK>;
+            key-positions = <31 32>;
+            layers = <5>;
+        };
+
+        right-click {
+            bindings = <&mkp RCLK>;
+            key-positions = <32 33>;
+            layers = <5>;
+        };
+
+        middle-click {
+            bindings = <&mkp MCLK>;
+            key-positions = <31 33>;
+            layers = <5>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -145,11 +167,11 @@
             // Layer 5: Automouse - auto-activates when trackball moves, times out after 1000ms
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans     &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
                                 &trans  &trans    &trans
             >;
         };
