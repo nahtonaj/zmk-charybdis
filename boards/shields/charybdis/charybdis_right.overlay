@@ -124,10 +124,10 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        /* Base: normal movement with scaling and automouse temp layer (1/4 compensates for 2x CPI) */
+        /* Base: normal cursor movement with automouse temp layer (1/4 compensates for 2x CPI) */
         input-processors = <&zip_xy_scaler 1 4 &zip_temp_layer 5 1000>;
 
-        /* Scroll mode on layer 3 - chain scalers for 1/256 effective scaling (compensates for 2x CPI) */
+        /* Scroll mode on layer 3 - 1/256 effective scaling (same ratio, 50% less dead zone) */
         scroll {
             layers = <3>;
             input-processors = <&zip_xy_scaler 1 16 &zip_xy_to_scroll_mapper &zip_scroll_scaler 1 16>;
