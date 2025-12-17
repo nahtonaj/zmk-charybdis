@@ -61,7 +61,7 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <600>;
+        cpi = <1200>;
         swap-xy;
         invert-x;
         invert-y;
@@ -124,19 +124,19 @@
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        /* Base: normal movement with scaling and automouse temp layer */
-        input-processors = <&zip_xy_scaler 1 2 &zip_temp_layer 5 1000>;
+        /* Base: normal movement with scaling and automouse temp layer (1/4 compensates for 2x CPI) */
+        input-processors = <&zip_xy_scaler 1 4 &zip_temp_layer 5 1000>;
 
-        /* Scroll mode on layer 3 - chain scalers for 1/128 effective scaling */
+        /* Scroll mode on layer 3 - chain scalers for 1/256 effective scaling (compensates for 2x CPI) */
         scroll {
             layers = <3>;
-            input-processors = <&zip_xy_scaler 1 8 &zip_xy_to_scroll_mapper &zip_scroll_scaler 1 16>;
+            input-processors = <&zip_xy_scaler 1 16 &zip_xy_to_scroll_mapper &zip_scroll_scaler 1 16>;
         };
 
-        /* Snipe mode on layer 4 - slower/more precise */
+        /* Snipe mode on layer 4 - slower/more precise (1/6 compensates for 2x CPI) */
         snipe {
             layers = <4>;
-            input-processors = <&zip_xy_scaler 1 3>;
+            input-processors = <&zip_xy_scaler 1 6>;
         };
     };
 };
