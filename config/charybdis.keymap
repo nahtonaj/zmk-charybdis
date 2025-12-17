@@ -113,7 +113,7 @@
 &kp GRAVE      &kp N1                &kp N2              &kp N3                &kp N4              &kp N5                  &kp N6                     &kp N7           &kp N8               &kp N9               &kp N0                         &kp MINUS
 &lt 1 TAB      &kp Q                 &kp W               &kp E                 &kp R               &kp T                   &kp Y                      &kp U            &kp I                &kp O                &kp P                          &kp BACKSLASH
 &mt LCTRL ESC  &lh_pht LEFT_SHIFT A  &lh_pht LEFT_GUI S  &lh_pht LEFT_ALT D    &lh_pht LCTRL F     &kp G                   &kp H                      &rh_pht RCTRL J  &rh_pht RIGHT_ALT K  &rh_pht RIGHT_GUI L  &rh_pht RIGHT_SHIFT SEMICOLON  &kp SQT
-&kp LSHFT      &kp Z                 &kp X               &lt 3 C               &lt 4 V             &lt 2 B                 &kp N                      &kp M            &kp COMMA            &kp DOT              &kp FSLH                       &lt 3 EQUAL
+&kp LSHFT      &kp Z                 &kp X               &lt 3 C               &lt 4 V             &lt 2 B                 &kp N                      &kp M            &lt 3 COMMA          &kp DOT              &kp FSLH                       &kp EQUAL
                                                          &mt LEFT_SHIFT SPACE  &mt LEFT_GUI ENTER  &lt 4 ESCAPE            &mt RIGHT_SHIFT BACKSPACE  &lt 1 SPACE
                                                                                &lt 3 LC(TAB)       &mt LEFT_ALT LA(TAB)    &lt 3 LC(LS(C))
             >;
@@ -146,7 +146,7 @@
 &trans  &trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans     &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans     &trans       &mkp MCLK  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans       &trans     &trans     &trans     &trans  &trans  &tog 3
                         &trans  &trans     &trans       &mkp LCLK  &mkp RCLK
                                 &mkp RCLK  &mkp LCLK    &trans
             >;
