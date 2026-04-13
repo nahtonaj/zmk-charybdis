@@ -92,6 +92,11 @@
         >;
     };
 	
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+    };
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
